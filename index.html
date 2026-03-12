@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio Trimmer</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="toolbar">
+        <div class="toolbar-group">
+          <button id="btn-open" title="Open file (Ctrl+O)">Open</button>
+        </div>
+        <div class="toolbar-separator"></div>
+        <div class="toolbar-group">
+          <button id="btn-play" title="Play/Pause (Space)" disabled>Play</button>
+          <button id="btn-stop" title="Stop" disabled>Stop</button>
+          <label class="speed-control">
+            <span>Speed:</span>
+            <select id="speed-select" disabled>
+              <option value="0.75">0.75x</option>
+              <option value="1" selected>1x</option>
+              <option value="1.25">1.25x</option>
+              <option value="1.5">1.5x</option>
+              <option value="1.75">1.75x</option>
+              <option value="2">2x</option>
+              <option value="2.5">2.5x</option>
+              <option value="3">3x</option>
+              <option value="4">4x</option>
+            </select>
+          </label>
+        </div>
+        <div class="toolbar-separator"></div>
+        <div class="toolbar-group">
+          <button id="btn-zoom-in" title="Zoom In (+)" disabled>Zoom +</button>
+          <button id="btn-zoom-out" title="Zoom Out (-)" disabled>Zoom -</button>
+          <button id="btn-zoom-fit" title="Fit to Window" disabled>Fit</button>
+        </div>
+        <div class="toolbar-separator"></div>
+        <div class="toolbar-group">
+          <button id="btn-undo" title="Undo (Ctrl+Z)" disabled>Undo</button>
+          <button id="btn-redo" title="Redo (Ctrl+Y)" disabled>Redo</button>
+          <button id="btn-delete" title="Delete Selection (Del)" disabled>Delete</button>
+        </div>
+        <div class="toolbar-separator"></div>
+        <div class="toolbar-group">
+          <button id="btn-export" title="Export audio" disabled>Export</button>
+        </div>
+      </div>
+
+      <div id="editor-area">
+        <canvas id="ruler-canvas"></canvas>
+        <div id="waveform-container">
+          <canvas id="waveform-canvas"></canvas>
+        </div>
+        <div id="scrollbar-container">
+          <div id="scrollbar-thumb"></div>
+        </div>
+      </div>
+
+      <div id="status-bar">
+        <span id="status-position">Position: 0:00.000</span>
+        <span id="status-selection">Selection: None</span>
+        <span id="status-info">No file loaded</span>
+      </div>
+    </div>
+
+    <div id="drop-overlay">
+      <div class="drop-message">Drop audio file here</div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(cd \"G:/Misc/Dev/Audio Trimmer\" && npm create tauri-app@latest . -- --template vanilla-ts --manager npm 2>&1)",
+      "Bash(cd:*)",
+      "Bash(cd \"G:/Misc/Dev/Audio Trimmer\" && npm install 2>&1)",
+      "Bash(head:*)",
+      "Bash(echo No canvas module, will use alternative:*)",
+      "Bash(cd \"G:/Misc/Dev/Audio Trimmer\" && npx tauri icon app-icon.png 2>&1)",
+      "Bash(cd \"G:/Misc/Dev/Audio Trimmer\" && npx tsc --noEmit 2>&1)",
+      "Bash(cd \"G:/Misc/Dev/Audio Trimmer\" && npx vite build 2>&1)",
+      "Bash(cd \"G:/Misc/Dev/Audio Trimmer\" && npx tauri build 2>&1)",
+      "Bash(find \"G:/Misc/Dev/Audio Trimmer/src\" -type f -name \"*.ts\" -o -name \"*.tsx\" -o -name \"*.css\" 2>/dev/null | head -20)",
+      "Bash(ls -la \"G:\\\\Misc\\\\Dev\\\\Audio Trimmer/src-tauri\" | grep -E \"\\\\.\\(toml|json|rs\\)$\")",
+      "Bash(cd \"G:\\\\Misc\\\\Dev\\\\Audio Trimmer\" && npm install lamejs soundtouchjs 2>&1)",
+      "Bash(cd \"G:\\\\Misc\\\\Dev\\\\Audio Trimmer\" && npm run build 2>&1)",
+      "Bash(cd \"G:\\\\Misc\\\\Dev\\\\Audio Trimmer\" && npm run tauri build 2>&1)",
+      "Bash(cd \"G:\\\\Misc\\\\Dev\\\\Audio Trimmer\" && npx tauri build 2>&1)",
+      "Bash(cd \"G:\\\\Misc\\\\Dev\\\\Audio Trimmer\" && npm search lamejs --json 2>/dev/null | head -5; npm info @breezystack/lamejs version 2>/dev/null; npm info lamejs-plus version 2>/dev/null; npm info @shin1244/lamejs version 2>/dev/null)",
+      "Bash(cd \"G:\\\\Misc\\\\Dev\\\\Audio Trimmer\" && npm info @breezystack/lamejs version 2>&1)",
+      "Bash(cd \"G:\\\\Misc\\\\Dev\\\\Audio Trimmer\" && npm uninstall lamejs && npm install @breezystack/lamejs 2>&1)",
+      "Bash(cd \"G:\\\\Misc\\\\Dev\\\\Audio Trimmer\" && node -e \"const lamejs = require\\('@breezystack/lamejs'\\); const enc = new lamejs.Mp3Encoder\\(2, 44100, 128\\); console.log\\('success'\\);\" 2>&1)",
+      "Bash(cd \"G:\\\\Misc\\\\Dev\\\\Audio Trimmer\" && node -e \"const lamejs = require\\('@breezystack/lamejs'\\); console.log\\(typeof lamejs, Object.keys\\(lamejs\\).slice\\(0,10\\)\\); console.log\\(typeof lamejs.default\\);\" 2>&1)",
+      "Bash(cd \"G:\\\\Misc\\\\Dev\\\\Audio Trimmer\" && node -e \"const m = require\\('@breezystack/lamejs'\\); console.log\\(typeof m, JSON.stringify\\(Object.getOwnPropertyNames\\(m\\).slice\\(0,20\\)\\)\\); const p = Object.getPrototypeOf\\(m\\); console.log\\('proto:', typeof p, Object.getOwnPropertyNames\\(p\\).slice\\(0,10\\)\\);\" 2>&1)",
+      "Bash(cd \"G:\\\\Misc\\\\Dev\\\\Audio Trimmer\" && node scripts/patch-lamejs.js 2>&1)"
+    ]
+  }
+}
