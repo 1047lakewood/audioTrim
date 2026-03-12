@@ -1,5 +1,4 @@
 import { AudioBufferData } from './AudioBufferData';
-import lamejs from 'lamejs';
 
 const MP3_SAMPLE_RATE = 44100;
 
@@ -37,7 +36,17 @@ function toInt16(channel: Float32Array): Int16Array {
 /**
  * Encode AudioBufferData to an MP3 Blob (128 kbps, 44100 Hz).
  */
-export function encodeMp3(data: AudioBufferData): Blob {
+export async function encodeMp3(data: AudioBufferData): Promise<Blob> {
+  // Some lamejs builds reference `MPEGMode` as a global, so we provide it
+  // explicitly before importing the encoder to keep export working reliably.
+  const { default: MPEGMode } = await import('lamejs/src/js/MPEGMode.js');
+  if (!(globalThis as { MPEGMode?: unknown }).MPEGMode) {
+    (globalThis as { MPEGMode?: unknown }).MPEGMode = MPEGMode;
+  }
+
+  const lamejsModule = await import('lamejs');
+  const lamejs = (lamejsModule.default ?? lamejsModule) as typeof import('lamejs');
+
   const numChannels = data.numberOfChannels;
   const kbps = 128;
 

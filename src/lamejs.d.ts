@@ -5,3 +5,8 @@ declare module 'lamejs' {
     flush(): Int8Array;
   }
 }
+
+declare module 'lamejs/src/js/MPEGMode.js' {
+  const MPEGMode: unknown;
+  export default MPEGMode;
+}

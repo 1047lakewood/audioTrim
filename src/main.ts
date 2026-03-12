@@ -218,7 +218,7 @@ async function exportAudio(): Promise<void> {
     const baseName = currentFileName.replace(/\.[^.]+$/, '') + '_edited';
 
     const { encodeMp3 } = await import('./audio/Mp3Encoder');
-    const blob = encodeMp3(engine.bufferData);
+    const blob = await encodeMp3(engine.bufferData);
     const arrayBuf = await blob.arrayBuffer();
     const bytes = new Uint8Array(arrayBuf);
 
